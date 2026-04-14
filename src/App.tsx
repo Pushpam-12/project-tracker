@@ -40,6 +40,7 @@ function App() {
 
   const [draggingTask, setDraggingTask] =
     useState<Task | null>(null);
+  const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
   const [activeUsers, setActiveUsers] = useState<string[]>([]);
 
   const setTasks = useTaskStore((s) => s.setTasks);
@@ -317,6 +318,8 @@ const [hoveredColumn, setHoveredColumn] =
                 status: [],
                 priority: [],
                 assignee: [],
+                from: "",
+                to: "",
               });
               window.history.replaceState(
                 null,
